@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form action='' method="post" enctype="multipart/form-data">
+    <h2>Информация о блюде</h2>
+    <img class="image" src="{{ url_for('static', filename=meal.image) }}">
+    <p>
+        <p class = "Blcock">{{ meal.name }}</p>
+    </p>
+    <p>
+        <p class = "Blcock">{{ meal.description }}</p>
+    </p>
+    <a class = "buttoN" href="javascript:history.back()">Назад</a>
+</form>
+{% endblock %}

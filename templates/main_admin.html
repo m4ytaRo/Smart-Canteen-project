@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form action='' method="post">
+  <table border="0">
+   <tr>
+    <th><h2>Меню блюд</h2></th>
+    <th><h2>Сегодня в меню</h2></th>
+   </tr>
+   <tr>
+	   <td>
+	   		<div class="otlineDiv">
+			<div class="size40">
+			</div>
+			<p>Общий рейтинг столовой: {{ mark.mark }} из 5 баллов</p>
+					{% for meal in meals %}
+					<div class="buttonS">
+					<h3 class="Label">{{ meal.name }}</h3>
+					<a class="buttoN" href="add-fast-menu/{{ meal.id }}">Добавить в меню</a>
+					<a class="buttoN" href="change/{{ meal.id }}">Изменить</a>
+					<a style="color: #ff2400" class="buttoN" href="delete/{{ meal.id }}">Удалить</a>
+				</div>
+				{% endfor %}
+				<div>
+				<a class="buttoN" href="/add-meal-lib">Добавить блюдо в библиотеку</a>
+				</div>
+			</div>
+		</div>
+	   </td>
+	   <td>
+	   		<div class="otlineDiv">
+			<div class="size40">
+			</div>
+			<div class="size40">
+					{% for ev_menu in menu %}
+						{% for meal in meals %}
+							{% if meal.id == ev_menu.meal_id %}
+								<div class="buttonSS">
+									<h3>{{ meal.name }} </h3>
+									<p><i>Заказано: {{ ev_menu.count}}</i></p>
+									<a class="buttoNN" href="delete-meal-menu/{{ meal.id }}">Удалить из меню</a>
+								</div>
+							{% endif %}
+						{% endfor %}
+					{% endfor %}
+			</div>
+		</div>
+	   </td>
+
+  </table>
+
+	
+</form>
+{% endblock %}

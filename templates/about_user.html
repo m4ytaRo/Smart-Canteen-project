@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form action='' method="post">
+    {{ form.hidden_tag() }}
+    <h2>О пользователе</h2>
+    <p class = "labeLText">{{ form.name.label }}</p>
+    <p>{{ form.name(value=current_user.name, class = "labeL") }}
+        {% for error in form.name.errors %}
+            <p class="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+        {% endfor %}
+    </p>
+    <p>
+        <p class = "labeLText">{{ form.surname.label }} </p>
+        <p >{{ form.surname(value=current_user.surname, class = "labeL") }}
+        {% for error in form.surname.errors %}
+            <p class="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+        {% endfor %}
+    </p>
+    <p>
+        <p class = "labeLText">{{ form.login.label}} </p>
+        <p>{{ form.login(value=current_user.login, class = "labeL") }}
+        {% for error in form.login.errors %}
+            <p class="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+        {% endfor %}
+    </p>
+    <p>{{ form.submit(type="submit",  class = "buttoN") }}</p>
+    <p>{{ form.button_out(type="submit",  class = "buttoNEx") }}</p>
+    <p class="error">{{ message }}</p>
+</form>
+{% endblock %}

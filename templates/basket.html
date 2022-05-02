@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form action='' method="post">
+    {{ form.hidden_tag() }}
+    <h2>Заказ</h2>
+    {% if not meals %}
+        <p class="error-message"><b>Добавьте продукты</b></p>
+    {% else %}
+    	<div class = "item">
+            <ol>
+                {% for meal in meals %}
+                    <li>{{ meal.name }}</li>
+                {% endfor %}
+            </ol>
+    	</div>
+        {{ form.button_delete(type='submit', class = "buttoN") }}
+        <h2 class="slogan">Уже поели?<br>Оцените столовую!</h2>
+        {{ form.mark(class="select") }}
+        {{ form.evaluate(type='submit', class = "buttoN2") }}
+    {% endif %}
+    <a class="back" href="javascript:history.back()">Назад</a>
+</form>
+{% endblock %}

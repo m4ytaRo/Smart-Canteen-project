@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename=file) }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/general.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/system/icon.jpeg') }}" type="image/x-icon">
+    <title>{{ title }}</title>
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-light">
+        {% if current_user.is_authenticated %}
+            {% if current_user.type == 0 %}
+                <img class="logo" src="{{ url_for('static', filename='img/system/icon.jpeg') }}">
+                <a class="title" href="/"><b>Умная столовая</b></a>
+                <img class="user" src="{{ url_for('static', filename='img/system/person-circle.svg') }}">
+                <a class="name" href="/about_user">{{ current_user.login }}</a>
+            {% else %}
+                <a href="/">Умная столовая, администратор</a>
+                <a style="margin-right: 16px" class="name" href="/about_admin">{{ current_user.login }}</a>
+            {% endif %}
+        {% else %}
+            <img class="logo" src="{{ url_for('static', filename='img/system/icon.jpeg') }}">
+            <a class="title" href="/"><b>Умная столовая</b></a>
+            <a style="float: right;" href="/enter">Войти</a>
+        {% endif %}
+    </nav>
+</header>
+
+<main>
+    {% block content %}{% endblock %}
+</main>
+</body>
+</html>

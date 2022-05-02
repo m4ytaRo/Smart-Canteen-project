@@ -1,0 +1,49 @@
+.buttoN {
+	background: linear-gradient(180deg, rgb(2, 43, 106), rgb(2, 43, 106));
+	border-color: rgb(2, 43, 106);
+	color: white;
+	width: 80%;
+	height: 30px;
+	border-radius: 8px;
+	text-decoration: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-left:auto;
+	margin-right:auto;
+	width: 78%;
+	height: 50px;
+	margin-top: 20px;
+}
+
+form {
+	margin-left:auto;
+	margin-right:auto;
+}
+
+p, h1, h2 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.labeL {
+	width: 80%;
+	height: 50px;
+	background: white;
+	border-color: color: rgb(10, 64, 150); 
+	border-radius: 8px;
+	margin: 0% 11%;
+	text-align:center;
+	color: black;
+}
+
+img{
+	margin-left:auto;
+margin-right:auto;
+width:10%
+}
+
+input {
+margin: 0% 42%;
+}

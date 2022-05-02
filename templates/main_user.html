@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form action='' method="post">
+    <h2 class="open">Выберите столовую</h2>
+    {% if basket %}
+        <p class="error-message"><b>Для повторного заказа отмените текущий</b></p>
+        <a class = "basketB" href="/basket">Мой заказ</a>
+    {% else %}
+        <!-- <hr> -->
+        {% for canteen in canteens %}
+            <div class="stol">
+    		<a href='canteens/{{ canteen.id }}' class="text2"><b>{{ canteen.name }}</b></a>
+    		<p class="text2">{{ canteen.address }}</p>
+            <!-- <p class="text2">Ближе всего</p> -->
+    		<img class="foto" src="{{ url_for('static', filename=canteen.image) }}" alt="Фото столовой">
+            {% for mark in marks %}
+                {% if mark.canteen_id == canteen.id %}
+                    {% for i in range(mark.mark) %}
+                        <img src="static/img/system/5stars.png" alt="rating" class="star"> 
+                    {% endfor %}
+                    {% for i in range(5 - mark.mark) %}
+                        <img src="static/img/system/0stars.png" alt="rating" class="star"> 
+                    {% endfor %}
+                {% endif %}
+            {% endfor %}
+            </div>
+        {% endfor %}
+    {% endif %}
+</form>
+{% endblock %}

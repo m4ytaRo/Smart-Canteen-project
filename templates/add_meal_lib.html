@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form action='' method="post" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+    <h2>Добавление блюда</h2>
+    <p>Изображение</p>
+    <input class = "fileSelect" type="file" name="image">
+    <p>
+        <p>{{ form.name.label }}</p>
+        <p>{{ form.name ( class = "labeL")}}</p>
+        {% for error in form.name.errors %}
+            <p class="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+        {% endfor %}
+    </p>
+    <p>
+        <p>{{ form.description.label }}</p>
+        <p>{{ form.description(class = "labeL") }}</p>
+        {% for error in form.description.errors %}
+            <p class="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+        {% endfor %}
+    </p>
+    <p>
+        <p>{{ form.price.label }}</p>
+        <p>{{ form.price (class = "labeL")}}</p>
+        {% for error in form.price.errors %}
+            <p class="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+        {% endfor %}
+    </p>
+
+        <p>{{ form.type.label}}</p>
+        <p>{{ form.type (class = "labeL")}}</p>
+        {% for error in form.type.errors %}
+            <p class="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+        {% endfor %}
+    {{ form.submit(type="submit", class = "button") }}
+    <p class="error">{{ message }}</p>
+</form>
+{% endblock %}

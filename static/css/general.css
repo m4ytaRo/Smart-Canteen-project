@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;700&display=swap');
+
+.title {
+    padding: 18px 0px;
+}
+
+body {
+    background: rgb(240, 240, 240);
+    font-family: 'Montserrat';
+}
+
+hr {
+    margin: 0;
+    height: 1px;
+    border-color: rgb(2, 43, 106);
+    background-color: rgb(2, 43, 106);
+}
+
+nav {
+    overflow: hidden;
+    padding: 5px 0;
+    background-color: rgb(2, 43, 106);
+}
+
+.logo {
+    float: left;
+    width: 45px;
+    margin: 7px;
+}
+
+.user {
+    padding-right: 16px;
+    float: right;
+    width: 45px;
+    margin: 15px 0;
+}
+
+
+nav a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 20px 16px;
+    text-decoration: none;
+    float: left;
+}
+
+.name {
+    float: right;
+    padding: 18px 5px;
+    color: white;
+}

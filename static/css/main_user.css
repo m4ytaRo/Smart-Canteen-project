@@ -1,0 +1,92 @@
+.error-message {
+    color: red;
+    text-align: center;
+}
+
+.open{
+    text-align: center;
+    color: rgb(10, 64, 150);
+    margin: 10px;
+}
+
+.container1{
+    margin: 1%;
+}
+
+.choose{
+    margin-top: 4%;
+    text-align: center;
+}
+
+.foto{
+    width: 150px;
+    height: 100px;
+    border-radius: 8%;
+    border: 1px solid ;
+    max-height:300px;
+    position:relative;
+    bottom: 42px;
+}
+
+.stol{
+    margin: 4%;
+    width: 85% ;
+    padding: 2%;
+    margin-left: auto;
+    margin-right: auto;
+	background: rgb(255, 255, 255);
+    /*box-shadow: 0 0 10px rgba(0,0,0,0.5);*/
+    box-shadow: 0 14px 20px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    /*box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);*/
+	border-radius: 8px;
+	color: rgb(82, 91, 103);
+}
+
+.text2{
+    color: rgb(34, 70, 144);
+    text-align: top;
+}
+
+.fotoforstol{
+    width: 40%;
+    float: left;
+}
+
+.textforstol{
+    width: 50%;
+    display: block;
+    float: right;
+}
+
+.profil{
+    float: right;
+    width: 10%;
+}
+
+.star{
+    max-width: 30px;
+    width: 30%;
+    float:left;
+    position:relative;
+    bottom:40px;
+}
+
+div {
+	text-align:right;
+}
+
+.basketB {
+    background: linear-gradient(180deg, rgb(2, 43, 106), rgb(2, 43, 106));
+    border:2px solid #56682E;
+    border-color: rgb(2, 43, 106);
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:20px;
+    width: 100%;
+    height: 40px;
+    font-size: 130%;
+}

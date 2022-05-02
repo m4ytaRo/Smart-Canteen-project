@@ -1,0 +1,82 @@
+.error-message {
+	color: red;
+	text-align: center;
+}
+
+.buttoN {
+	background: linear-gradient(180deg, rgb(2, 43, 106), rgb(2, 43, 106));
+    border-color: rgb(2, 43, 106);
+    width: 80%;
+    height: 50px;
+    border-radius: 8px;
+    justify-content: center;
+    margin: 0 auto;
+    display: flex;
+    color: red;
+}
+
+.buttoN2 {
+	background: linear-gradient(180deg, rgb(2, 43, 106), rgb(2, 43, 106));
+    border-color: rgb(2, 43, 106);
+    width: 80%;
+    height: 50px;
+    border-radius: 8px;
+    justify-content: center;
+    margin: 0 auto;
+    display: flex;
+    color: white;
+}
+
+
+.item {
+	border-radius: 8px;
+	width:80%;
+	background: white;
+	color: rgb(10, 64, 150);
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 20px auto;
+}
+
+
+.select {
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px solid rgb(2, 43, 106);
+	border-radius: 8px;
+	width: 80%;
+	min-height: 50px;
+	margin-bottom: 10px;
+	background: white;
+	color: black;
+	padding: 5px;
+	display: flex;
+	justify-content: center;
+}
+
+h2 {
+	text-align: center;
+    color: rgb(10, 64, 150);
+    margin: 10px;
+}
+
+.slogan {
+	margin-top: 40px;
+}
+
+.back {
+	margin-top: 20px;
+	background: linear-gradient(180deg, rgb(2, 43, 106), rgb(2, 43, 106));;
+	width: 80%;
+	height: 50px;
+	border-radius: 8px;
+	color: white;
+	text-decoration:none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-left:auto;
+	margin-right:auto;
+}

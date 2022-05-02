@@ -1,0 +1,67 @@
+p, h2 {
+	margin-bottom: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 10px;
+	color: rgb(10, 64, 150);
+}
+img {
+	margin-left:auto;
+	margin-right:auto;
+	width:10%
+}
+
+input {
+	margin: 0% 35%;
+}
+
+.buttoN {
+	background: linear-gradient(180deg, rgb(2, 43, 106), rgb(2, 43, 106));
+	border-color: rgb(2, 43, 106);
+	color: white;
+	width: 80%;
+	height: 30px;
+	border-radius: 8px;
+	text-decoration: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-left:auto;
+	margin-right:auto;
+	width: 30%;
+	height: 50px;
+	margin-bottom: 5px;
+}
+
+.buttoNEx {
+	background: linear-gradient(180deg, rgb(2, 43, 106), rgb(2, 43, 106));
+	border-color: rgb(2, 43, 106);
+	color: white;
+	width: 80%;
+	height: 30px;
+	border-radius: 8px;
+	text-decoration: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-left:auto;
+	margin-right:auto;
+	width: 30%;
+	height: 50px;
+	margin-bottom: 5px;
+}
+
+.labeL {
+	width: 30%;
+	height: 50px;
+	background: #26273A;
+	border-color:#1A1A26; 
+	border-radius: 8px;
+	color: black;
+	margin: 0% 35%;
+	margin-bottom: 5px;
+	background: white;
+    border-color: rgb(2, 43, 106); 
+    border-radius: 8px;
+}

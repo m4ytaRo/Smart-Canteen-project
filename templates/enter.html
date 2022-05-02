@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form method="post">
+<h1>Вход</h1>
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.login(class = "g80", type="text", placeholder="Логин") }}
+        {% for error in form.login.errors %}
+            <p class="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.password(class = "g80", type="password", placeholder="Пароль") }}
+		
+        {% for error in form.password.errors %}
+            <p class="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+        {% endfor %}
+    </p>
+	<p>
+    {{ form.submit(class = "enter_button", type="submit") }}
+    <p style="color: red"><b>{{ message }}</b></p>
+	</p>
+</form>
+{% endblock %}

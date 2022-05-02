@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form action='' method="post" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+    <h2>О пользователе</h2>
+    <p>Изображение</p>
+    
+    <img src="{{ url_for('static', filename=current_user.image) }}">
+	<input type="file" name="image">
+    <p>
+        <p>{{ form.name.label }} </p>
+		{{ form.name(value=current_user.name, class='labeL') }}
+        {% for error in form.name.errors %}
+            <p class="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+        {% endfor %}
+    </p>
+    <p>
+        <p>{{ form.login.label }}</p>
+        {{ form.login(value=current_user.login, class='labeL') }}
+        {% for error in form.login.errors %}
+            <p class="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+        {% endfor %}
+    </p>
+    <p>
+        <p>{{ form.address.label }}</p>
+        {{ form.address(value=current_user.address, class='labeL') }}
+        {% for error in form.address.errors %}
+            <p class="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+        {% endfor %}
+    </p>
+    {{ form.submit(type="submit", class = "buttoN") }}
+    {{ form.button_out(type="submit", class = "buttoNEx") }}
+    <p class="error">{{ message }}</p>
+</form>
+{% endblock %}

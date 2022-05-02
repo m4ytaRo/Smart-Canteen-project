@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form action='' method="post" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+    <h2>Изменение блюда</h2>
+    <p>Изображение</p>
+    <img src="{{ url_for('static', filename=meal.image) }}">
+	<input type="file" name="image">
+    <p>
+        <p>{{ form.name.label }}</p>
+        <p>{{ form.name(value=meal.name, class='labeL') }}</p>
+        {% for error in form.name.errors %}
+            <p class="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+        {% endfor %}
+    </p>
+    <p>
+        <p>{{ form.description.label }}</p>
+        <p>{{ form.description(value=meal.description, class='labeL') }}</p>
+        {% for error in form.description.errors %}
+            <p class="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+        {% endfor %}
+    </p>
+    <p>
+        <p>{{ form.price.label }}</p>
+        <p>{{ form.price(value=meal.price, class='labeL') }}</p>
+        {% for error in form.price.errors %}
+            <p class="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+        {% endfor %}
+    </p>
+    <p>
+        <p>{{ form.type.label }}</p>
+        <p>{{ form.type(value=meal.type, class='labeL') }}</p>
+        {% for error in form.type.errors %}
+            <p class="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+        {% endfor %}
+    </p>
+    {{ form.submit(type="submit",class='buttoN') }}
+    <p class="error">{{ message }}</p>
+</form>
+{% endblock %}

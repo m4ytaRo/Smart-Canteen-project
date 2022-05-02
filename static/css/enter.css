@@ -1,0 +1,43 @@
+p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+form {
+    margin: 10% 10%;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.g80 {
+    width: 80%;
+    height: 50px;
+    background: white;
+    border-color: rgb(2, 43, 106); 
+    border-radius: 8px;
+    color: black;
+    text-align: center;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+::placeholder {
+    color: black;
+    opacity: 50%;
+    text-align: center;
+}
+
+.enter_button {
+    background: linear-gradient(180deg, rgb(2, 43, 106), rgb(2, 43, 106));
+    border-color: rgb(2, 43, 106);
+    color: white;
+    width: 80%;
+    height: 50px;
+    border-radius: 8px;
+}

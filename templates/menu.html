@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form action='' method="post">
+    <hr style="border-color: white; background-color: white;">
+    <a class = "buttoNB" href="http://sib-ecomap.ru/basket">Ваш заказ ({{ count }})</a>
+    <h2>{{ canteen.name }}</h2>
+    <div class = "boxX">
+	<h3>Завтрак</h3>
+        {% for ev_menu in menu %}
+            {% for meal in meals %}
+                {% if meal.id == ev_menu.meal_id and meal.type_id == 2 %}
+                    <hr>
+                    <div class="think">
+                        <img class = "MealIMG" src="{{ url_for('static', filename=meal.image) }}">
+                        <p class = "Name">{{ meal.name }}</p>
+                        <p class = "Name">Цена: {{ meal.price }} р.</p>
+                        <a class = "buttoN" href="http://sib-ecomap.ru/add-to-basket/{{ meal.id }}">Добавить в заказ</a>
+                        <a class = "buttoN" href="http://sib-ecomap.ru/info/{{ meal.id }}">Описание</a>
+                        {% if meal.id in basket %}
+                            <a class = "buttoN" href="http://sib-ecomap.ru/delete-from-basket/{{ meal.id }}">Удалить из заказа</a>
+                        {% endif %}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+    </div>
+    
+    <div class = "boxX">
+	<h3>Обед</h3>
+        {% for ev_menu in menu %}
+            {% for meal in meals %}
+                {% if meal.id == ev_menu.meal_id and meal.type_id == 3 %}
+                    <hr>
+                    <div class="think">
+                        <img class = "MealIMG" src="{{ url_for('static', filename=meal.image) }}">
+                        <p class = "Name">{{ meal.name }}</p>
+                        <p class = "Name">Цена: {{ meal.price }} р.</p>
+                        <a class = "buttoN" href="http://sib-ecomap.ru/add-to-basket/{{ meal.id }}">Добавить в заказ</a>
+                        <a class = "buttoN" href="http://sib-ecomap.ru/info/{{ meal.id }}">Описание</a>
+                        {% if meal.id in basket %}
+                            <a class = "buttoN" href="http://sib-ecomap.ru/delete-from-basket/{{ meal.id }}">Удалить из заказа</a>
+                        {% endif %}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+    </div>
+    
+    <div class = "boxX">
+	<h3>Ужин</h3>
+        {% for ev_menu in menu %}
+            {% for meal in meals %}
+                {% if meal.id == ev_menu.meal_id and meal.type_id == 4 %}
+                <hr>
+                    <div class="think">
+                        <img class = "MealIMG" src="{{ url_for('static', filename=meal.image) }}">
+                        <p class = "Name">{{ meal.name }}</p>
+                        <p class = "Name">Цена: {{ meal.price }} р.</p>
+                        <a class = "buttoN" href="http://sib-ecomap.ru/add-to-basket/{{ meal.id }}">Добавить в заказ</a>
+                        <a class = "buttoN" href="http://sib-ecomap.ru/info/{{ meal.id }}">Описание</a>
+                        {% if meal.id in basket %}
+                            <a class = "buttoN" href="http://sib-ecomap.ru/delete-from-basket/{{ meal.id }}">Удалить из заказа</a>
+                        {% endif %}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+    </div>
+    
+    <div class = "boxX">
+	<h3>Напитки</h3>
+        {% for ev_menu in menu %}
+            {% for meal in meals %}
+                {% if meal.id == ev_menu.meal_id and meal.type_id == 1 %}
+                <hr>
+                    <div class="think">
+                        <img  class = "MealIMG" src="{{ url_for('static', filename=meal.image) }}">
+                        <p class = "Name">{{ meal.name }}</p>
+                        <p class = "Name">Цена: {{ meal.price }} р.</p>
+                        <a class = "buttoN" href="http://sib-ecomap.ru/add-to-basket/{{ meal.id }}">Добавить в заказ</a>
+                        <a class = "buttoN" href="http://sib-ecomap.ru/info/{{ meal.id }}">Описание</a>
+                        {% if meal.id in basket %}
+                            <a class = "buttoN" href="http://sib-ecomap.ru/delete-from-basket/{{ meal.id }}">Удалить из заказа</a>
+                        {% endif %}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+    </div>
+</form>
+{% endblock %}
