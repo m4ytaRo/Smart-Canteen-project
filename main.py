@@ -37,6 +37,12 @@ def logout():
     return redirect("/")
 
 
+@app.route('/pay', methods=['GET', 'POST'])
+@login_required
+def pay():
+    return render_template('pay.html', title='Оплата', file='css/main.css')
+
+
 @app.route('/delete-from-basket/<int:id>', methods=['GET', 'POST'])
 @login_required
 def delete_from_basket(id):
@@ -45,7 +51,8 @@ def delete_from_basket(id):
         '<script>document.location.href = document.referrer</script>')
     if basket:
         db_sess = db_session.create_session()
-        menu = db_sess.query(EverydayMenu).filter(EverydayMenu.meal_id == id).first()
+        menu = db_sess.query(EverydayMenu).filter(
+            EverydayMenu.meal_id == id).first()
         menu.count -= 1
         db_sess.commit()
 
@@ -72,8 +79,11 @@ def basket_prof():
         meals = db_sess.query(MealsLibrary).filter(
             MealsLibrary.id.in_(indexes))
         canteen = meals[0].canteen_id
+        count = sum([i.price for i in meals])
         if form.validate_on_submit():
-            if form.evaluate.data:
+            if form.pay.data:
+                return redirect('/pay')
+            elif form.evaluate.data:
                 stat = db_sess.query(Statistic).filter(
                     Statistic.canteen_id == canteen).first()
                 if not stat:
@@ -83,7 +93,8 @@ def basket_prof():
                     db_sess.add(stat)
                     db_sess.commit()
                 else:
-                    stat.mark = math.floor((stat.mark + int(form.mark.data)) / 2)
+                    stat.mark = math.ceil(
+                        (stat.mark + int(form.mark.data)) / 2)
                     db_sess.commit()
             res = make_response(redirect('/'))
             res.set_cookie('basket', '1', max_age=0)
@@ -94,7 +105,8 @@ def basket_prof():
                 db_sess.commit()
             return res
         return render_template('basket.html', title='Заказ',
-                               file='css/basket.css', meals=meals, form=form)
+                               file='css/basket.css', meals=meals, 
+                               form=form, count=count)
     return render_template('basket.html', title='Заказ',
                            file='css/basket.css', form=form)
 
@@ -291,7 +303,8 @@ def main():
                 MealsLibrary.canteen_id == current_user.id)
             menu = db_sess.query(EverydayMenu).filter(
                 EverydayMenu.canteen_id == current_user.id)
-            mark = db_sess.query(Statistic).filter(Statistic.canteen_id == current_user.id).first()
+            mark = db_sess.query(Statistic).filter(
+                Statistic.canteen_id == current_user.id).first()
             return render_template('main_admin.html', title='Умная столовая',
                                    file='css/main_admin.css', meals=meals,
                                    menu=menu, mark=mark)
@@ -384,6 +397,18 @@ def enter():
                                message='Неправильный логин или пароль!')
     return render_template('enter.html', title='Вход',
                            file='css/enter.css', form=form)
+
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html', title='Ошибка',
+                           file='css/main.css'), 404
+
+
+@app.errorhandler(401)
+def page_not_found(e):
+    return render_template('401.html', title='Ошибка',
+                           file='css/main.css'), 404
 
 
 # @app.route('/')
