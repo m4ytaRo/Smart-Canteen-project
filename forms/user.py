@@ -32,4 +32,5 @@ class BasketForm(FlaskForm):
                                               ('3', 'Удовлетворительно'), ('4', 'Хоршо'),
                                               ('5', 'Прекрасно')])
     evaluate = SubmitField('Оценить')
+    pay = SubmitField('Оплатить')
     button_delete = SubmitField('Отменить заказ')
