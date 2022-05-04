@@ -10,11 +10,13 @@
     	<div class = "item">
             <ol>
                 {% for meal in meals %}
-                    <li>{{ meal.name }}</li>
+                    <li>{{ meal.name }} -- {{ meal.price }} р.</li>
                 {% endfor %}
+            <b>Общая стоимость: {{ count }} р.</b>
             </ol>
     	</div>
-        {{ form.button_delete(type='submit', class = "buttoN") }}
+        {{ form.pay(type='submit', class="buttoN2") }}
+        {{ form.button_delete(type='submit', class="buttoN") }}
         <h2 class="slogan">Уже поели?<br>Оцените столовую!</h2>
         {{ form.mark(class="select") }}
         {{ form.evaluate(type='submit', class = "buttoN2") }}
